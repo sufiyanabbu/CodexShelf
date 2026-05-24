@@ -17,16 +17,7 @@ public class Book {
         this.totalCopies = 0;
         this.availableCopies = 0;
     }
-
-    public Book() {
-        this.bookId = bookId;
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.genre = genre;
-        this.totalCopies = totalCopies;
-        this.availableCopies = availableCopies;
-    }
+    public Book(){}
 
     public int getBookId() {
         return bookId;
