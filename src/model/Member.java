@@ -1,20 +1,22 @@
 package model;
 
+import java.time.LocalDate;
+
 public class Member {
     private int memberId;
     private String name;
     private String email;
     private String phone;
-    private int joinDate;
-    private int isActive;
-    public Member(int memberId, String name, String email, String phone, int joinDate, int isActive) {
+    private LocalDate joinDate;
+    private boolean isActive;
+    public Member(int memberId, String name, String email, String phone, LocalDate joinDate, boolean isActive) {
         this.memberId = memberId;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.joinDate = joinDate;
     }
-
+    public Member(){}
     public int getMemberId() {
         return memberId;
     }
@@ -47,19 +49,19 @@ public class Member {
         this.phone = phone;
     }
 
-    public int getJoinDate() {
+    public LocalDate getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(int joinDate) {
+    public void setJoinDate(LocalDate joinDate) {
         this.joinDate = joinDate;
     }
 
-    public int getIsActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
-    public void setIsActive(int isActive) {
+    public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
 }
