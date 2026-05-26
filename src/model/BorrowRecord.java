@@ -24,6 +24,7 @@ public class BorrowRecord {
         this.returnDate = returnDate;
         this.fine = fine;
     }
+    public BorrowRecord() {}
 
     public int getRecordId() {
         return recordId;
