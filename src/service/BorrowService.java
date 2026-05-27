@@ -1,8 +1,8 @@
 package service;
 
-import dao.BookDAO;
-import dao.BorrowDAO;
-import dao.MemberDAO;
+import dao.BookDao;
+import dao.BorrowDao;
+import dao.MemberDao;
 import model.Book;
 import model.BorrowRecord;
 import model.Member;
@@ -13,9 +13,9 @@ import java.util.List;
 public class BorrowService {
 
     // needs all three DAOs because issueBook and returnBook touch multiple tables
-    private BorrowDAO borrowDAO = new BorrowDAO();
-    private BookDAO bookDAO = new BookDAO();
-    private MemberDAO memberDAO = new MemberDAO();
+    private BorrowDao borrowDAO = new BorrowDao();
+    private BookDao bookDAO = new BookDao();
+    private MemberDao memberDAO = new MemberDao();
 
     public void issueBook(int bookId, int memberId) {
 

@@ -37,14 +37,14 @@ public class MemberDao {
             Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(Query);
             ResultSet rs = ps.executeQuery();
-            Member member = new Member();
             while (rs.next()) {
+                Member member = new Member();
                 member.setMemberId(rs.getInt("member_id"));
                 member.setName(rs.getString("name"));
                 member.setEmail(rs.getString("email"));
                 member.setPhone(rs.getString("phone"));
-                member.setJoinDate(rs.getDate("joindate").toLocalDate());
-                member.setIsActive(rs.getBoolean("isActive"));
+                member.setJoinDate(rs.getDate("join_date").toLocalDate());
+                member.setIsActive(rs.getBoolean("is_Active"));
                 members.add(member);
             }
             conn.close();
@@ -89,15 +89,16 @@ public class MemberDao {
         try{
             Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(Query);
+            ps.setInt(1, memberid);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 member = new Member();
                 member.setMemberId(rs.getInt("member_id"));
                 member.setName(rs.getString("name"));
-                member.setEmail(rs.getString("emial"));
+                member.setEmail(rs.getString("email"));
                 member.setPhone(rs.getString("phone"));
-                member.setIsActive(rs.getBoolean("isActive"));
-                member.setJoinDate(rs.getDate("joinDate").toLocalDate());
+                member.setIsActive(rs.getBoolean("is_Active"));
+                member.setJoinDate(rs.getDate("join_date").toLocalDate());
             }
         }
         catch (Exception e){

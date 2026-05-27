@@ -8,13 +8,14 @@ public class Member {
     private String email;
     private String phone;
     private LocalDate joinDate;
-    private boolean isActive;
+    public boolean isActive;
     public Member(int memberId, String name, String email, String phone, LocalDate joinDate, boolean isActive) {
         this.memberId = memberId;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.joinDate = joinDate;
+        this.isActive = isActive;
     }
     public Member(){}
     public int getMemberId() {
@@ -63,5 +64,9 @@ public class Member {
 
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public boolean isActive() {
+        return isActive;
     }
 }
